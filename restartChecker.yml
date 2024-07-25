@@ -10,4 +10,4 @@
        
     - name: Reboot if required
       reboot:
-        when: reboot_required_file.exists == true
+        when: reboot_required_file == *** System restart required ***
