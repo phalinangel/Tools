@@ -1,6 +1,6 @@
 ---
 - name: Get Facts 
-  hosts: all
+  hosts: '{{ target }}'
   #become: yes
   tasks:
     - name: Show facts available on the system(s)
