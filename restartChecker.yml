@@ -10,4 +10,4 @@
        
     - name: Reboot if required
       reboot:
-        when: reboot_required_file.stat.exists == true
+        when: reboot_required_file.exists == true
