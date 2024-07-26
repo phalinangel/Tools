@@ -4,10 +4,10 @@
   become: yes
   tasks:
     - name: Detecting systems that need reboot
-      stat: 
-        path: "/var/run/reboot-required"
+      ansible.builtin.debug:
+      with_file: "/var/run/reboot-required"
       register: rebootCheck
     
     - name: Rebooting system(s)  
       reboot:
-      when: rebootCheck.stat == 'System restart required'
+      when: rebootCheck == '*** System restart required ***'
