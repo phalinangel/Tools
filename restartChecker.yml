@@ -3,10 +3,10 @@
   hosts: all
   become: yes
   tasks:
-    - name: Detecting systems that need reboot
+    - name: 'Detecting systems that need reboot'
       shell: 'cat /var/run/reboot-required'
       register: '{{ rebootCheck }}'
        
-    - name: Reboot if required
-        reboot:
-          when: rebootCheck == *** System restart required ***
+    - name: 'Reboot if required'
+      reboot:
+      when: rebootCheck == *** System restart required ***
