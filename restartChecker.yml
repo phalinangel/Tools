@@ -5,7 +5,9 @@
   tasks:
     - name: Detecting systems that need reboot
       stat: 
-        path: /var/run/reboot-required
+        path: "/var/run/reboot-required"
       register: rebootCheck
+    
+    - name: Rebooting system(s)  
       reboot:
-      when: rebootCheck.stat.exist
+        when: rebootCheck.stat.exist
