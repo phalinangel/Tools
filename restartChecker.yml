@@ -4,9 +4,9 @@
   become: yes
   tasks:
     - name: Detecting systems that need reboot
-      debug:
-        msg: "Checking system {{ lookup('ansible.builtin.file', '/var/run/reboot-required') }}"
+      shell: 'cat /var/run/reboot-required'
+      register: '{{ rebootCheck }}'
        
     - name: Reboot if required
         reboot:
-          when: lookup == *** System restart required ***
+          when: rebootCheck == *** System restart required ***
