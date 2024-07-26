@@ -10,4 +10,4 @@
     
     - name: Rebooting system(s)  
       reboot:
-      when: rebootCheck.stat.exist
+      when: rebootCheck.stat.exist == true
