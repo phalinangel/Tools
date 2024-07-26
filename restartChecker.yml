@@ -10,4 +10,4 @@
     
     - name: Rebooting system(s)  
       reboot:
-      when: rebootCheck.value == '*** System restart required ***'
+      when: rebootCheck.stat: == 'System restart required'
