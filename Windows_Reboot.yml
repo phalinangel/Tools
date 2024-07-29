@@ -1,0 +1,6 @@
+---
+- name: Reboot target windows system
+  hosts: "{{ windows_target }}"
+  tasks: 
+    ansible.windows.win_reboot:
+      msg: "Reboot initiated by Ansible"
