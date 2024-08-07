@@ -1,6 +1,0 @@
----
-- name: Nextcloud Update
-  hosts: all
-  become: yes
-  tasks:
-    ansible.builtin.script: /home/rootadmin/NextCloudMaintenanceModeOff.sh
