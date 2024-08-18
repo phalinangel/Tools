@@ -1,0 +1,6 @@
+---
+- name: Configure Windows Firewall
+  hosts: all 
+  tasks: 
+    - name: Enable Remote Desktop Rule
+      ansible.windows.win_shell: enable-NetFirewallRule -name *remotedesktop-user*
