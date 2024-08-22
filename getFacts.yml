@@ -1,7 +1,6 @@
 ---
 - name: Get Facts 
-  hosts: '{{ target }}'
-  #become: yes
+  hosts: all
   tasks:
     - name: Show facts available on the system(s)
       ansible.builtin.debug:
