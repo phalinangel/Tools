@@ -1,6 +1,7 @@
 ---
 - name: Ubuntu Restart Checker
   hosts: all
+  gather_facts: no
   become: yes
   tasks:
     - name: Detecting systems that need reboot
