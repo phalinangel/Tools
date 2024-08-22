@@ -5,9 +5,10 @@
   tasks:
     - name: Detecting systems that need reboot
       ansible.builtin.debug:
-      with_file: "/var/run/reboot-required"
-      register: rebootCheck
+        with_file: "/var/run/reboot-required"
+        register: rebootCheck
+      ignore_errors: true  
     
     - name: Rebooting system(s)  
       reboot:
-      when: rebootCheck == '*** System restart required ***'
+        when: rebootCheck == '*** System restart required ***'
