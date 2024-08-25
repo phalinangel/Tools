@@ -1,0 +1,7 @@
+---
+
+- name: Tailscale Updater
+  hosts: all
+  tasks:
+    - name: Updating Tailscale
+      ansible.windows.win_shell: Tailscale update -yes
