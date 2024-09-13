@@ -1,0 +1,7 @@
+---
+- name: Create VM Checkpoint
+  hosts: all
+  tasks: 
+    
+    - name: Creating VM Checkpoint
+      ansible.windows.win_shell: Checkpoint-vm -Name {{ vmname }}
